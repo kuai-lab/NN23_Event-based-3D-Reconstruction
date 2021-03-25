@@ -1,2 +1,2 @@
-# autonomous-drone
-This repository is for autonomous drone.
+# abnormal-event-camera
+This repository is for abnormal-event-camera.
