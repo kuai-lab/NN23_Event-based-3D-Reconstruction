@@ -10,6 +10,9 @@ public class NewBehaviourScript : MonoBehaviour
     {
         transform.position = new Vector3(0, 0, 0);
         
-        transform.Rotate(new Vector3(0f, 300f, 0f) * Time.deltaTime);
+        transform.Rotate(new Vector3(0f, 150f, 0f) * Time.deltaTime);
+        
+//        transform.rotation = Quaternion.Euler (new Vector3 (10, 0, 0));
     }
 }
+
