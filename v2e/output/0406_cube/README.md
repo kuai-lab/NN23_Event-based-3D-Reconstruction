@@ -2,7 +2,8 @@
 
 ## 촬영 방법
 
-Virtual Camera 3대를 각각 30, 45, 60도에 배치에 동시 촬영
+Virtual Camera 3대를 각각 30, 45, 60도에 배치에 동시 촬영  
+Object의 경우 C# script를 통해 회전
 
 ![KakaoTalk_Photo_2021-04-06-17-57-05](https://user-images.githubusercontent.com/44921488/113685780-8f4ece00-9701-11eb-87c9-c7f13c24149c.png)
 
