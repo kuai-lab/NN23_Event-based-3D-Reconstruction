@@ -1,0 +1,67 @@
+arguments:
+auto_timestamp_resolution:	False
+avi_frame_rate:	30
+batch_size:	8
+cutoff_hz:	15.0
+disable_slomo:	True
+dvs1024:	False
+dvs128:	False
+dvs240:	False
+dvs346:	False
+dvs640:	False
+dvs_aedat2:	150f_60.aedat
+dvs_emulator_seed:	0
+dvs_exposure:	['duration', '0.005']
+dvs_h5:	None
+dvs_params:	None
+dvs_text:	v2e-dvs-events.txt
+dvs_vid:	dvs-video.avi
+dvs_vid_full_scale:	2
+input:	C:\Users\KCY\Documents\GitHub\v2e\input\0408_unity\60\150f_60.mp4
+input_frame_rate:	None
+input_slowmotion_factor:	1.0
+leak_rate_hz:	0.01
+neg_thres:	0.15
+no_preview:	False
+output_folder:	C:\Users\KCY\Documents\GitHub\v2e\output\150f_60
+output_height:	260
+output_in_place:	True
+output_width:	346
+overwrite:	True
+pos_thres:	0.15
+shot_noise_rate_hz:	0.001
+show_dvs_model_state:	None
+sigma_thres:	0.03
+skip_video_output:	False
+slomo_model:	C:\Users\KCY\Documents\GitHub\v2e\input\SuperSloMo39.ckpt
+slomo_stats_plot:	False
+start_time:	None
+stop_time:	9.0
+synthetic_input:	None
+timestamp_resolution:	0.003
+unique_output_folder:	True
+vid_orig:	video_orig.avi
+vid_slomo:	video_slomo.avi
+2021-04-08 01:45:25,883 - __main__ - INFO - opening video input file C:\Users\KCY\Documents\GitHub\v2e\input\0408_unity\60\150f_60.mp4
+2021-04-08 01:45:25,905 - __main__ - [1;31mWARNING[1;0m - slomo interpolation disabled by command line option; output DVS timestamps will have source frame interval resolution
+2021-04-08 01:45:25,906 - __main__ - INFO - 
+ events will have timestamp resolution 4.17ms,
+2021-04-08 01:45:25,906 - __main__ - INFO - Source video C:\Users\KCY\Documents\GitHub\v2e\input\0408_unity\60\150f_60.mp4 has total 2401 frames with total duration 10s. 
+Source video is 239.98fps with slowmotion_factor 1 (frame interval 4.17ms),
+Will convert 2161 frames 0 to 2160
+(From 0.0s to 9.000749687630154s, duration 9.000749687630154s)
+2021-04-08 01:45:25,907 - __main__ - INFO - v2e DVS video will have constant-duration frames 
+at 200fps (accumulation time 5ms), 
+DVS video will have 1800 frames with duration 9s and playback duration 60s
+
+2021-04-08 01:45:25,911 - __main__ - INFO - processing frames 0 to 2160 from video input
+2021-04-08 01:45:25,912 - __main__ - INFO - Input video C:\Users\KCY\Documents\GitHub\v2e\input\0408_unity\60\150f_60.mp4 has W=1920 x H=1080 frames each with 3 channels
+2021-04-08 01:45:25,912 - __main__ - INFO - *** Stage 1/3: Resizing 2161 input frames to output size (with possible RGB to luma conversion)
+2021-04-08 01:45:25,933 - __main__ - INFO - 
+Converting input frames from RGB color to luma
+2021-04-08 01:45:52,193 - __main__ - INFO - *** Stage 2/3:turning npy frame files to png from C:\Users\KCY\AppData\Local\Temp\tmp63dd3if3
+2021-04-08 01:46:02,691 - __main__ - INFO - *** Stage 3/3: emulating DVS events from 2161 frames
+2021-04-08 01:49:52,215 - __main__ - INFO - done processing 2161 frames in 266.33s (8.11fr/s)
+ see output folder C:\Users\KCY\Documents\GitHub\v2e\output\150f_60
+2021-04-08 01:49:52,215 - __main__ - INFO - generated total 178.32k events (92.38k on, 85.93k off)
+2021-04-08 01:49:52,215 - __main__ - INFO - avg event rate 19.81kHz (10.26kHz on, 9.55kHz off)
