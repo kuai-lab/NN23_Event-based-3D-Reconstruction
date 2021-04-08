@@ -12,4 +12,4 @@
 
 - [input](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/v2e/input/0408_octagon)
 - [v2e output](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/v2e/output/0408_octagon)
-- [jAER recording](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/v2e/jAER/0406_octagon)
+- [jAER recording](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/v2e/jAER/0408_octagon)
