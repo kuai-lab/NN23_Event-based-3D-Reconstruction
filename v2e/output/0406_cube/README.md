@@ -17,7 +17,7 @@ Object의 경우 C# script를 통해 회전
 |45|[Link](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/v2e/input/0406_cube/45)|
 |60|[Link](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/v2e/input/0406_cube/60)|
 
-## Output Data
+## v2e Output Data
 
 |촬영 각도|Object 회전 속도|링크|
 |------|---|---|
@@ -30,3 +30,11 @@ Object의 경우 C# script를 통해 회전
 |60|50f|[Link](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/v2e/output/0406_cube/60/50f_60)|
 |60|150f|[Link](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/v2e/output/0406_cube/60/150f_60)|
 |60|300f|[Link](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/v2e/output/0406_cube/60/300f_60)|
+
+## jAER Output Data
+
+|촬영 각도|Object 회전 속도|링크|
+|------|---|---|
+|30|50f|[Link](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/v2e/jAER/0406_cube/30)|
+|45|50f|[Link](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/v2e/jAER/0406_cube/45)|
+|60|50f|[Link](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/v2e/jAER/0406_cube/60)|
