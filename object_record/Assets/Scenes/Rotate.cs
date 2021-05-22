@@ -32,4 +32,3 @@ public class Rotate : MonoBehaviour
 //        transform.rotation = Quaternion.Euler (new Vector3 (10, 0, 0));
     }
 }
-

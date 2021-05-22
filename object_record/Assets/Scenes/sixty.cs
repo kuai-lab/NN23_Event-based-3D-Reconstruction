@@ -22,6 +22,7 @@ public class sixty : MonoBehaviour
     
     public void StartRecord(string name)
     {
+        string save_root = "Assets/Scenes/tmpsaveroot";
         var controllerSettings = ScriptableObject.CreateInstance<RecorderControllerSettings>();
         TestRecorderController = new RecorderController(controllerSettings);
         
@@ -40,7 +41,7 @@ public class sixty : MonoBehaviour
         };
         
         videoRecorder.AudioInputSettings.PreserveAudio = false;
-        videoRecorder.OutputFile = "Assets/Scenes/60/"+name;
+        videoRecorder.OutputFile = save_root+"/"+name+"_60";
         //videoRecorder.OutputFile; // Change this to change the output file name (no extension)
         
         controllerSettings.AddRecorderSettings(videoRecorder);
