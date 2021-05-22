@@ -7,12 +7,13 @@ public class create_object : MonoBehaviour
 {
     public int count;
     List<string> files;
+    string root = "Assets/Scenes/resources";
     private static List<string> GF()
     {
         List<string> files = new List<string>();
-        if (System.IO.Directory.Exists("Assets/Scenes/resources"))
+        if (System.IO.Directory.Exists(root))
         {
-            System.IO.DirectoryInfo di = new System.IO.DirectoryInfo("Assets/Scenes/resources");
+            System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(root);
             foreach (var item in di.GetFiles())
             {
                 if (item.Extension.ToLower().CompareTo(".obj") == 0)
@@ -65,8 +66,8 @@ public class create_object : MonoBehaviour
             instance.AddComponent<Rotate>();
 
             GameObject.Find("camera60").GetComponent<sixty>().StartRecord(files[count]);
-            GameObject.Find("camera45").GetComponent<fourtyfive>().StartRecord(files[count]);
-            GameObject.Find("camera30").GetComponent<thirty>().StartRecord(files[count]);
+            // GameObject.Find("camera45").GetComponent<fourtyfive>().StartRecord(files[count]);
+            // GameObject.Find("camera30").GetComponent<thirty>().StartRecord(files[count]);
             
 
         }
