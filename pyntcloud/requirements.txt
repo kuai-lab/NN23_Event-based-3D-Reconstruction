@@ -1,0 +1,11 @@
+numpy
+scipy
+pandas
+pylas
+lazrs
+ipython
+matplotlib
+numba
+pytest
+pyvista
+open3d
