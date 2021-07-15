@@ -3,7 +3,9 @@
 Event based 3D Object Reconstruction 연구 Repository입니다.
 
 
-## 1. Blender 설치
+## 1. requirements
+### Blender 설치
+### ~~~ 설치
 
 
 ## 2. Blender에 Vision Blender Addon 추가
