@@ -13,7 +13,6 @@ Event based 3D Object Reconstruction 연구 Repository입니다.
 
 
 ## 4. Python script 작성
-
 - 처음 시작 option 설정
 ```
 bpy.context.scene.vision_blender.bool_save_gt_data = True
@@ -29,5 +28,15 @@ bpy.context.object.pass_index = 1
 ```
 bpy.ops.render.render()
 ```
+
+### example
+- code
+```
+PLZ add here.
+```
+
+### example imgs
+- optical flow
+- depth map
 
 ## 5. 
