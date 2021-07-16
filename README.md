@@ -1,6 +1,7 @@
 # Event based 3D Reconstruction
 
 Event based 3D Object Reconstruction 연구 Repository입니다.
+![image](https://user-images.githubusercontent.com/44921488/125921177-210e8939-f4f0-467a-8e05-812a64d8aed1.png)
 
 
 ## 1. requirements
