@@ -56,7 +56,7 @@ PLZ add here.
 # Point Cloud
 ```
 cd pyntcloud
-conda env create --file environment.yaml
+conda env create --file requirements.yaml
 ```
 obj 폴더에 obj 파일들을 넣어줍니다.
 
