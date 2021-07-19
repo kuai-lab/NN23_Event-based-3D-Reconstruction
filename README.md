@@ -20,11 +20,22 @@ Event based 3D Object Reconstruction 연구 Repository입니다.
 ```
 bpy.context.scene.vision_blender.bool_save_gt_data = True
 bpy.context.scene.render.engine = 'CYCLES'
+cam = scene.objects['Camera']
+cam.location = (0, 4.0, 0.5) #카메라 초기 위치 설정
 ```
 
 - object 마다 pass_index 설정
 ```
 bpy.context.object.pass_index = 1
+```
+- Camera Pose json 출력
+
+```
+frame_data = {
+        'file_path': scene.render.filepath,
+        'rotation': radians(stepsize),
+        'transform_matrix': listify_matrix(cam.matrix_world)
+    }
 ```
 
 - render 시작 (npz 생성)
@@ -90,4 +101,4 @@ slomo를 사용하지 않으려면
 python v2e.py -i input/tennis.mov --overwrite --timestamp_resolution=.003 --auto_timestamp_resolution=False --dvs_exposure duration 0.005 --output_folder=output/tennis --overwrite --pos_thres=.15 --neg_thres=.15 --sigma_thres=0.03 --dvs_aedat2 tennis.aedat --output_width=346 --output_height=260 --stop_time=3 --cutoff_hz=15 --disable_slomo
 ```
 위 명령어를 입력합니다.
-# Camera Pose
+
