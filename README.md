@@ -6,8 +6,7 @@ Event based 3D Object Reconstruction 연구 Repository입니다.
 # Optical Flow & Depth Map GT
 ## 1. requirements
 ### Blender 설치
-### ~~~ 설치
-
+- https://www.blender.org/
 
 ## 2. Blender에 Vision Blender Addon 추가
 - Github : https://github.com/Cartucho/vision_blender
