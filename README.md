@@ -63,18 +63,8 @@ PLZ add here.
 
 ## 5.  
 
-# Point Cloud
-```
-cd pyntcloud
-conda env create --file requirements.yaml
-```
-obj 폴더에 obj 파일들을 넣어줍니다.
-
-```
-conda activate ptcloud
-python main.py
-```
-main.py를 실행시키면 npy 폴더에 mesh로부터 생성된 Point cloud가 저장됩니다.  
+# Mesh to Point Cloud
+[레포지토리 이동하기](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/mesh2pc)
 # Event Signal
 
 
