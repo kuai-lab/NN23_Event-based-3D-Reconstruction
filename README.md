@@ -42,12 +42,6 @@ frame_data = {
 bpy.ops.render.render()
 ```
 
-### example
-- code
-```
-PLZ add here.
-```
-
 ### example imgs
 - normal<br>
 ![image](https://user-images.githubusercontent.com/51734430/125779800-15cf838f-2c8c-42cf-8527-aaf6be556187.png)
