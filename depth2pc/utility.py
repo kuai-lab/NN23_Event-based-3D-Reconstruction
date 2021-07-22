@@ -8,23 +8,39 @@ def npz_data(npz):
 
 
 def generate_pointcloud(depth, intrinsic, extrinsic, scalingFactor):
-    focalLength = intrinsic[0][0]
-    centerX = intrinsic[1][2]
-    centerY = intrinsic[0][2]
+    focalLengthX = intrinsic[0][0]
+    focalLengthY = intrinsic[1][1]
+    centerX = intrinsic[0][2]
+    centerY = intrinsic[1][2]
     
     points = []    
-    for v in range(depth.shape[1]):
-        for u in range(depth.shape[0]):
-            Z = depth[u,v] / scalingFactor
+    for v in range(depth.shape[0]):
+        for u in range(depth.shape[1]):
+
+            if depth[v,u]<=0: continue
+            Z = depth[v,u] / scalingFactor
+            X = (u - centerX) * Z / focalLengthX
+            Y = (v - centerY) * Z / focalLengthY
+            '''
+            x_over_z = (centerX - u) / focalLengthX
+            y_over_z = (centerY - v) / focalLengthY
+            Z = depth[v,u] / scalingFactor / np.sqrt(1. + x_over_z**2 + y_over_z**2)
             if Z<=0: continue
-            X = (u - centerX) * Z / focalLength
-            Y = (v - centerY) * Z / focalLength
+            X = x_over_z * Z
+            Y = y_over_z * Z
+            '''
+
+            '''
+            Z = depth[v,u] / scalingFactor
+            if Z<=0: continue
+            X = (u - centerX) * Z / focalLengthX
+            Y = (v - centerY) * Z / focalLengthY
+            '''
+            X,Y,Z = extrinsic[:,:3].T @ (np.array([X,Y,Z]).T - extrinsic[:,3])
             points.append([X, Y, Z])
-    ones = np.ones(len(points), dtype=np.float32)
-    
-    result = np.vstack((np.array(points).T, ones)).T 
-    
-    return np.dot(extrinsic, result.T).T
+    result = np.array(points)
+
+    return result
 
 
 def isRotationMatrix(R) :
