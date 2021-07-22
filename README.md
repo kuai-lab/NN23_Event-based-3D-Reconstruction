@@ -58,6 +58,6 @@ bpy.ops.render.render()
 ## 5.  
 
 # Mesh to Point Cloud
-[Repository 이동하기](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/mesh2pc)
+[폴더 이동하기](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/mesh2pc)
 # Event Signal(v2e)
 [Repository 이동하기](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/v2e)
