@@ -1,0 +1,65 @@
+import os
+import numpy as np
+from tqdm import tqdm
+
+# pip install natsort
+import natsort # for index sorting
+
+# pip install open3d
+import open3d as o3d # for 3D Point cloud save & visualization
+
+# should be located with same directory
+from util.utility import npz_data, generate_pointcloud
+
+
+# PATH that contains *.npz files including camera parameters and depth map, etc.
+path_dir = './data/circle/'
+file_list = os.listdir(path_dir)
+npz_list = []
+for file_path in file_list:
+    if os.path.splitext(file_path)[1] == '.npz':
+        npz_list.append(file_path)
+
+# Ascending sort
+npz_list = natsort.natsorted(npz_list)
+print('Ascending sorted by natsort.')
+print(npz_list)
+
+
+i_list=[] # List for virtual camera's intrinsic parameter
+e_list=[] # List for virtual camera's extrinsic parameter with each frames
+d_list=[] # List for virtual camera's depth map with each frames
+
+### Extracting *.npz 
+for npz in npz_list:
+    i, e, d = npz_data(path_dir+npz)
+    i_list.append(i)
+    e[:,3]=(e[:,3]/1000)
+    e_list.append(e)
+    d_list.append(d)
+
+result = []
+
+print('Generate point cloud with %d input depth maps.' %(len(i_list)))
+for i in tqdm(range(len(d_list))):
+    # Read depth map, camera parameters
+    # Generate point cloud with depth map, intrinsic parameters
+    # Registrate point cloud by calculating of extrinsic parameters
+    A = generate_pointcloud(d_list[i], i_list[i], e_list[i], 1000)
+
+    if len(result) != 0: 
+        result = np.vstack((A, result))
+    else: 
+        result = A
+
+print('Point cloud generated with %d vertices.' %(len(result)))
+
+pcd_np = np.vstack(result)
+pcd = o3d.geometry.PointCloud()
+pcd.points = o3d.utility.Vector3dVector(pcd_np)
+
+# You can set your output_path and file name
+output_path = "./output/"
+file_name = "point_cloud.ply"
+o3d.io.write_point_cloud(output_path + file_name, pcd)
+print("%s successfully stored." %file_name)
