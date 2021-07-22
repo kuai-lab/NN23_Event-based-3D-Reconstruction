@@ -32,3 +32,8 @@ python point_cloud_generator.py
 ### (Additional) Run in Notebook
 
 - We also. provide this generator as notebook. You can show in [Notebook](jupyter/point_cloud_generator.ipynb)
+
+  
+## Output Example
+- 2 views of demo output ```armadilo.ply```
+![img](img/sample_output.png)
