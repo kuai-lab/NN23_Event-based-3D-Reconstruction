@@ -31,7 +31,8 @@ python point_cloud_generator.py
 
 ### (Additional) Run in Notebook
 
-- We also. provide this generator as notebook. You can show in [Notebook](jupyter/point_cloud_generator.ipynb)
+- We also. provide this generator as notebook. You can show in [notebook](jupyter/point_cloud_generator.ipynb).
+- You can check your camera position & orientation in [notebook](jupyter/camera_pose_visualization.ipynb).
 
   
 ## Output Example
