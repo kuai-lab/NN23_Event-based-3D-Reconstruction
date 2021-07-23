@@ -21,3 +21,15 @@ slomo를 사용하지 않으려면
 python v2e.py -i input/tennis.mov --overwrite --timestamp_resolution=.003 --auto_timestamp_resolution=False --dvs_exposure duration 0.005 --output_folder=output/tennis --overwrite --pos_thres=.15 --neg_thres=.15 --sigma_thres=0.03 --dvs_aedat2 tennis.aedat --output_width=346 --output_height=260 --stop_time=3 --cutoff_hz=15 --disable_slomo
 ```
 위 명령어를 입력합니다.
+
+### 다른 중요한 파라미터들
+
+노이즈가 적은 output event signal을 생성
+```
+--dvs_params clean
+```
+프레임 간격을 조절하는 파라미터.  
+블렌더에서 480FPS로 3초간 녹화시 1440프레임이 생성되기 때문에 아래와 같은 타임으로 설정해야함
+```
+--dvs_exposure duration 0.00208333
+```
