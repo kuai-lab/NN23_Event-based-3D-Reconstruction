@@ -1,4 +1,5 @@
 import os
+import glob
 import numpy as np
 from tqdm import tqdm
 
@@ -12,31 +13,30 @@ import open3d as o3d # for 3D Point cloud save & visualization
 from util.utility import npz_data, generate_pointcloud
 
 
-# PATH that contains *.npz files including camera parameters and depth map, etc.
-path_dir = './data/circle/'
-file_list = os.listdir(path_dir)
-npz_list = []
-for file_path in file_list:
-    if os.path.splitext(file_path)[1] == '.npz':
-        npz_list.append(file_path)
+# PATH that contains *.npz, *.npy files including camera parameters and depth map, etc.
+npz_path_dir = './data/circle/'
+npy_path_dir = '/home/cvlab_wj/wj/event2depth/reconstruction/data/'
 
-# Ascending sort
-npz_list = natsort.natsorted(npz_list)
+npz_list = natsort.natsorted(glob.glob(npz_path_dir+'*.npz'))
+npy_list = natsort.natsorted(glob.glob(npy_path_dir+'*.npy'))
+
 print('Ascending sorted by natsort.')
-print(npz_list)
-
+print(len(npz_list))
+print(len(npy_list))
 
 i_list=[] # List for virtual camera's intrinsic parameter
 e_list=[] # List for virtual camera's extrinsic parameter with each frames
-d_list=[] # List for virtual camera's depth map with each frames
+d_list=[] # List for virtual camera's predict depth map with each event voxels
+gt_d_list=[] # List for virtual camera's ground truth depth map with each frames
 
 ### Extracting *.npz 
-for npz in npz_list:
-    i, e, d = npz_data(path_dir+npz)
+for idx, npz in enumerate(npz_list):
+    i, e, gt_d = npz_data(npz)
     i_list.append(i)
     e[:,3]=(e[:,3]/1000)
     e_list.append(e)
-    d_list.append(d)
+    d_list.append(np.load(npy_list[idx]))
+    gt_d_list.append(gt_d)
 
 result = []
 
