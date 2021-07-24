@@ -36,7 +36,7 @@ python point_cloud_generator_only_gt.py
 - Your point cloud data will be stored in ```depth2pc/output``` directory as *.ply format.
 ```
 cd depth2pc
-python point_cloud_generator_only_gt.py
+python point_cloud_generator.py
 ```
 
   
