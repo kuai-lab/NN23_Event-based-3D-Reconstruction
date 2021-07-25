@@ -33,3 +33,12 @@ python v2e.py -i input/tennis.mov --overwrite --timestamp_resolution=.003 --auto
 ```
 --dvs_exposure duration 0.00208333
 ```
+## 자동화 코드
+auto.py를 v2e 폴더에 넣어 줍니다.  
+해당 스크립트에서 경로를 바꾸고 저장합니다.
+```
+cd v2e
+conda activate v2e
+python auto.py
+```
+v2e를 자동으로 실행해 이벤트 시그널을 생성하고 event to voxel과 타임스탬프 생성까지 자동으로 진행해 줍니다.
