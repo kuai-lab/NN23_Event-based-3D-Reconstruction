@@ -80,3 +80,15 @@ path_rgbframe = glob.glob(self.frame_folder + '/*_{:04d}_image.png'.format(frame
 
 path_rgbframe = glob.glob(self.frame_folder + '/frame_{:010d}.png'.format(frame_idx))
 ```
+## 8. utils/training_utils.py line 99 ~ 101 부분 아래와 같이 수정
+```
+ave_grads.append(lr*p.grad.abs().mean())
+max_grads.append(lr*p.grad.abs().max())
+min_grads.append(lr*p.grad.abs().min())
+                                            ▽
+ave_grads.append(lr*p.grad.abs().mean().cpu())
+max_grads.append(lr*p.grad.abs().max().cpu())
+min_grads.append(lr*p.grad.abs().min().cpu())
+
+
+
