@@ -35,7 +35,7 @@ python v2e.py -i input/tennis.mov --overwrite --timestamp_resolution=.003 --auto
 ```
 ## 자동화 코드
 auto.py를 v2e 폴더에 넣어 줍니다.  
-해당 스크립트에서 경로를 바꾸고 저장합니다.
+해당 스크립트에서 인풋으로 들어가는 동영상의 경로와 아웃풋의 경로를 바꾸고 저장합니다.
 ```
 cd v2e
 conda activate v2e
