@@ -60,6 +60,9 @@ def make_voxel_grid(path, events, times, width=346, height=260):
         else: indices = np.where((times[idx-1,1]<events[:, 0]) & (events[:, 0]<time))[0]
 
         np.save(path +'/'+ "event_tensor_{:010d}".format(idx), events_to_voxel_grid(events[indices,:]))
+        events[np.where(events[indices,3]==0)[0],3]=-1.0
+        np.save("events/data/events_{:010d}".format(idx), events[indices,:])
+    
 #        voxel_grid[idx, :] =events_to_voxel_grid(events[indices,:])
 #        rb_voxel = np.ones((height, width, 3), np.float32)
 #        red = np.where(voxel_grid[idx]>0)
@@ -89,6 +92,9 @@ def voxel_timestamp(path, original):
     boundary_from_v2e.to_csv(path +'/'+'boundary_timestamps.txt', header=None, sep =' ')
     original.to_csv(path +'/'+ 'timestamps.txt', header=None, index=False,sep =' ')
 
+# make folder
+os.makedirs("./events/data", exist_ok=True)
+    
 # V2E
 input_path = "/home/kcy/Desktop/nerf/input/"
 output_path = "/home/kcy/Desktop/nerf/output/"
