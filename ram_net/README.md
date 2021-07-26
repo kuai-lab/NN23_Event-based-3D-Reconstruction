@@ -1,3 +1,48 @@
+# Ramnet 학습 방법
+
+<br>
+
+원정s local 기준
+
+## 0. data 경로
+data (voxels는 events경로에 있는 것 복사)
+```
+|__ wj
+    |_ output
+    |_ train_data
+       |_ depth
+          |_ data
+          |_ frames
+          |_ voxels
+       |_ events
+          |_ data
+          |_ frames
+          |_ frames_white
+          |_ voxels
+       |_ rgb
+          |_ data
+          |_ voxels
+```
+
+## 1. terminal에서 export
+```bash
+export PREPROCESSED_DATASETS_FOLDER=/data/wj/example
+```
+## 2. config 내에서 train, validation 경로 수정
+```bash
+"base_folder": "",
+"depth_folder": "depth/data",
+"frame_folder": "rgb/data",
+"flow_folder": "",
+"event_folder": "events/voxels",
+```
+
+## 3. config 내에서 train output 경로 수정
+```bash
+"save_dir": "/data/wj/output",
+```
+
+
 ## Basics 
 To conduct the following experiments, one has to export the path to the folder with all datasets:
 
