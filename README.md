@@ -37,6 +37,21 @@ frame_data = {
     }
 ```
 
+- OBJ normalize
+```
+import bpy
+
+max_dim = 2
+
+context = bpy.context
+
+mesh_obs = (o for o in context.selected_objects 
+        if o.type == 'MESH' and o.dimensions.length)
+
+for o in mesh_obs:
+    o.scale *= max_dim / max(o.dimensions)
+```
+
 - render 시작 (npz 생성)
 ```
 bpy.ops.render.render()
