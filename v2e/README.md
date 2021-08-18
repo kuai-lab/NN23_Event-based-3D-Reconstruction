@@ -1,3 +1,5 @@
+pytorch 1.8 이상 사용할 것
+
 # v2e
 [v2e github](https://github.com/SensorsINI/v2e)  
 ```
