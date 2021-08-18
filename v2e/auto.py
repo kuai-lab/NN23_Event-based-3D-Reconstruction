@@ -107,7 +107,7 @@ for files in file_list:
 
     if not os.path.exists(output_path):
         os.mkdir(output_path) 
-    os.system('python v2e.py -i ' + big_path +' --overwrite --timestamp_resolution=.003 --auto_timestamp_resolution=False --dvs_exposure duration 0.00208 --output_folder=' + output_path +' --overwrite --pos_thres=.15 --neg_thres=.15 --sigma_thres=0.03 --dvs_aedat2 bunny.aedat --output_width=346 --output_height=260 --stop_time=3 --cutoff_hz=15 --disable_slomo')
+    os.system('python v2e.py -i ' + big_path +' --overwrite --timestamp_resolution=.003 --auto_timestamp_resolution=False --dvs_exposure duration 0.00208 --output_folder=' + output_path +' --overwrite --pos_thres=.15 --neg_thres=.15 --sigma_thres=0.03 --dvs_aedat2 bunny.aedat --output_width=346 --output_height=260 --stop_time=3 --cutoff_hz=15 --disable_slomo --no_preview')
     print(files + 'v2e done! saves to '+output_path)
 print('v2e done')
 
