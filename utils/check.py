@@ -1,5 +1,6 @@
 import glob
 import os
+import flow_vis
 
 folder_list = glob.glob("result/*_*_result")
 
