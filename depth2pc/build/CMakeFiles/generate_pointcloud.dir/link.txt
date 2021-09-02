@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC   -shared  -o generate_pointcloud.cpython-38-x86_64-linux-gnu.so CMakeFiles/generate_pointcloud.dir/generate_pointcloud.cpp.o -flto 

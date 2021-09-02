@@ -1,6 +1,9 @@
 import numpy as np
 import math
-
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+from build.generate_pointcloud import *
 
 def npz_data(npz):
     query = np.load(npz)
