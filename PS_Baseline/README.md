@@ -58,3 +58,12 @@ CUDA_VISIBLE_DEVICES=0 python main.py --concat_data --in_img_num 32 --in_light -
 CUDA_VISIBLE_DEVICES=0 python eval/run_model.py --retrain data/models/PS-FCN.pth.tar --in_img_num 96 --train_img_num 32
 # You can find the results in data/Training/run_model
 ```
+
+## Data Normalization for Handling SVBRDFs (TPAMI 2020)
+```shell
+# Train
+CUDA_VISIBLE_DEVICES=0 python main.py --concat_data --in_img_num 32 --in_light --normalize --item normalize
+
+# Test
+CUDA_VISIBLE_DEVICES=0 python eval/run_model.py --retrain data/models/PS-FCN_B_S_32_normalize.pth.tar --in_img_num 96 --normalize --train_img_num 32
+```
