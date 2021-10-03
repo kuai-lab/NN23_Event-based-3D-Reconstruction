@@ -1,4 +1,4 @@
-# PS-FCN
+# PS-Baseline
 **[PS-FCN: A Flexible Learning Framework for Photometric Stereo, ECCV 2018](https://guanyingc.github.io/PS-FCN/)**,
 <br>
 
