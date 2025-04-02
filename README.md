@@ -4,7 +4,7 @@ Repository of Event-based 3D Object Reconstruction
 ![image](https://user-images.githubusercontent.com/44921488/125921177-210e8939-f4f0-467a-8e05-812a64d8aed1.png)
 
 # Optical Flow & Depth Map GT
-## 1. requirements
+## 1. Requirements
 ### Blender Install
 - https://www.blender.org/
 
