@@ -1,21 +1,21 @@
 # Event based 3D Reconstruction
 
-Event based 3D Object Reconstruction 연구 Repository입니다.
+Repository of Event-based 3D Object Reconstruction 
 ![image](https://user-images.githubusercontent.com/44921488/125921177-210e8939-f4f0-467a-8e05-812a64d8aed1.png)
 
 # Optical Flow & Depth Map GT
 ## 1. requirements
-### Blender 설치
+### Blender Install
 - https://www.blender.org/
 
-## 2. Blender에 Vision Blender Addon 추가
-- Github : https://github.com/Cartucho/vision_blender
+## 2. Adding the Visionon Blender Addon on Blender
+- Github: https://github.com/Cartucho/vision_blender
 
-## 3. Obj file 불러오기
+## 3. Reading OBJ file
 
 
-## 4. Python script 작성
-- 처음 시작 option 설정
+## 4. Writing Python script
+- Initial setup of option Setting
 ```
 bpy.context.scene.vision_blender.bool_save_gt_data = True
 bpy.context.scene.render.engine = 'CYCLES'
@@ -23,11 +23,11 @@ cam = scene.objects['Camera']
 cam.location = (0, 4.0, 0.5) #카메라 초기 위치 설정
 ```
 
-- object 마다 pass_index 설정
+- Set pass_index for each object
 ```
 bpy.context.object.pass_index = 1
 ```
-- Camera Pose json 출력
+- Camera Pose json export
 
 ```
 frame_data = {
@@ -52,7 +52,7 @@ for o in mesh_obs:
     o.scale *= max_dim / max(o.dimensions)
 ```
 
-- render 시작 (npz 생성)
+- Start rendering (npz generation)
 ```
 bpy.ops.render.render()
 ```
@@ -73,6 +73,6 @@ bpy.ops.render.render()
 ## 5.  
 
 # Mesh to Point Cloud
-[폴더 이동하기](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/mesh2pc)
+[Move Folder](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/mesh2pc)
 # Event Signal(v2e)
-[폴더 이동하기](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/v2e)
+[Move Folder](https://github.com/kuai-lab/Event-based-3D-Reconstruction/tree/main/v2e)
